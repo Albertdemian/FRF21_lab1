@@ -5,12 +5,10 @@ Create a ROS workspace
 ``source /opt/ros/setup.bash``
 
 Create the workspace
-$
-mkdir p ~/ catkin_ws src
-$ cd ~/
-catkin_ws /
-$
-catkin_make
+
+``mkdir p ~/ catkin_ws src
+cd ~/catkin_ws/
+catkin_make``
 •
 Create a new package
 $ cd ~/
