@@ -5,17 +5,21 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="full_model">
 
-    <xacro:include filename="$(find macro_tutorial)/src/model/model.urdf.xacro"/>
-    <xacro:include filename="$(find gripper_pkg)/urdf/grip.urdf.xacro"/>
+    <xacro:macro name="combined_model">
+        <xacro:include filename="$(find macro_tutorial)/src/model/model.urdf.xacro"/>
+        <xacro:include filename="$(find gripper_pkg)/urdf/grip.urdf.xacro"/>
 
 
-    <xacro:rotating_base/>
-    <xacro:gripper/>
-    
-    <joint name="attachment" type="fixed">
-        <origin xyz="0.0 0.1 0.125" rpy="0.0 0.0 0.0"/>
-        <parent link="inter_1"/>
-        <child link="grip_body"/>    
-    </joint>
+        <xacro:rotating_base/>
+        <xacro:gripper/>
+        
+        <joint name="attachment" type="fixed">
+            <origin xyz="0.0 0.1 0.125" rpy="0.0 0.0 0.0"/>
+            <parent link="inter_1"/>
+            <child link="grip_body"/>    
+        </joint>
+    </xacro:macro>
+
+    <xacro:combined_model/>
 
 </robot>

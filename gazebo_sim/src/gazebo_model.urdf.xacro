@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="gazebo_model">
+
+    <xacro:include filename="$(find macro_tutorial)/src/model/combined_model.urdf.xacro"/>
+    <xacro:include filename="$(find gazebo_sim)/src/gazebo.urdf.xacro"/>
+    <xacro:include filename="$(find gazebo_sim)/src/gazebo_plugin.urdf.xacro"/>
+    <xacro:include filename="$(find gazebo_sim)/src/materials.urdf.xacro"/>
+
+
+    <xacro:transmission_ext/>
+    <xacro:gazebo_plugin/>
+    <xacro:model_gazebo_elm/>
+    
+    <link name="world">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        
+    </link>
+
+    <joint name="mount" type="fixed">
+        <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+        <parent link="world"/>
+        <child link="base_frame"/>    
+    </joint>
+    
+</robot>
